@@ -1,0 +1,599 @@
+/*RESET Y ESTRUCTURA BASE*/
+html, body, header, footer, section, div, nav, img, a, button, p, h1, h2, h3 {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Esto arregla el hueco azul de la derecha */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    background-image: url('../img/LegoFondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*NAVEGACIÓN Y HEADER */
+.barra-navegacion {
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffcf00;
+    padding: 15px 30px;
+    border-bottom: 4px solid #000000;
+    width: 100%;
+}
+
+.botones-sesion {
+    display: flex;
+    gap: 15px;
+}
+
+
+/* Contenedor derecho que agrupa botones y carrito */
+
+.nav-derecha {
+    display: flex;
+    align-items: center;
+    gap: 40px; 
+}
+
+/* Estilos para que el carrito se vea bien y tenga un efecto al pasar el mouse */
+.btn-carrito {
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-carrito:hover {
+    transform: scale(1.15); /* Crece un poquito cuando le pasas el cursor */
+}
+
+
+.btn-sesion, .btn-registro {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-sesion {
+    border: 2px solid #000000;
+    background-color: #000000;
+}
+
+.btn-sesion:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn-registro {
+    background-color: #e3000b;
+    border: 2px solid #e3000b;
+}
+
+.btn-registro:hover {
+    background-color: #b30008;
+    border-color: #b30008;
+}
+
+.btn-hamburguesa {
+    display: block; 
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+    position: relative; 
+    z-index: 1002; 
+}
+
+.menu-enlaces {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.menu-enlaces a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+}
+
+/*HERO BANNER */
+.hero-banner {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.75) 45%, rgba(0, 0, 0, 0) 100%), url('../img/Fotoat1.jpeg');
+    background-size: cover;
+    background-position: right 80%; 
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 40px 5%; 
+    text-align: left; 
+}
+
+.hero-contenido {
+    max-width: 520px;
+    color: white;
+    z-index: 2;
+    text-align: left;
+}
+
+.etiqueta {
+    background-color: #ffcf00;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin-right: 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.hero-contenido h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-contenido p {
+    font-size: 15px;
+    margin-bottom: 25px;
+    color: #e0e0e0;
+}
+
+.hero-botones {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.btn-primario, .btn-secundario {
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    display: inline-block;
+}
+
+.btn-primario {
+    background-color: white;
+    color: black;
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+/*SECCIONES DE CONTENIDO*/
+.fondo-oscuro {
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    padding: 60px 20px;
+}
+
+.seccion-cherno {
+    width: 100%;
+    margin: 0 0 50px 0; 
+    padding: 50px 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('../img/fondocherno1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.titulo-cherno {
+    font-size: 2.5rem; 
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.contenedor-cherno {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px; 
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.cherno-imagen {
+    flex: 1; 
+    max-width: 400px;
+}
+
+.cherno-texto {
+    flex: 1; 
+    text-align: left;
+}
+
+/* La sección de noticias se mantiene como una caja bien proporcionada */
+.seccion-noticias {
+    text-align: left;
+    padding: 30px 20px;
+    background-color: rgba(0,0,0,0.7);
+    max-width: 900px;
+    margin: 30px auto;
+    border-radius: 10px;
+    width: 90%;
+}
+
+/* Las secciones de los modelos (AT-ST y Destructor) abarcan el 100% de la pantalla */
+.seccion-animada, .seccion-animada2 {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;           /* Ocupa todo el ancho */
+    max-width: 100%;
+    padding: 50px 20px;
+    margin: 0;             /* Elimina márgenes laterales para tocar los bordes */
+    text-align: center;    /* Centra los textos */
+}
+
+/* Fuerza a las imágenes dentro de estas secciones a centrarse */
+.seccion-animada img, .seccion-animada2 img {
+    display: block;
+    margin: 0 auto;        /* Esta es la regla mágica que centra las imágenes */
+    max-width: 100%;
+}
+
+/*FOOTER */
+footer {
+    background-image: url('../img/legos.jpg');
+    background-size: cover; 
+    background-position: center; 
+    padding: 60px 20px; 
+    margin-top: 50px; 
+    border-top: 4px solid #ffcf00; 
+    width: 100%;
+}
+
+
+/*ESTILOS DEL CARRITO LATERAL*/
+.panel-carrito {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Lo esconde fuera de la pantalla a la derecha */
+    width: 320px;
+    height: 100vh;
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    transition: right 0.3s ease; /* Hace que el panel se deslice suavemente */
+    z-index: 2000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Esta clase se añade con JS para deslizar el carrito hacia adentro */
+.panel-carrito.activo {
+    right: 0; 
+}
+
+.carrito-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ffcf00;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-cerrar-carrito {
+    background: #e3000b;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#lista-carrito {
+    flex-grow: 1; /* Empuja los totales hacia abajo */
+    overflow-y: auto; /* Agrega scroll si hay muchos productos */
+}
+
+
+.item-carrito {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    color: #000000; 
+}
+
+.item-carrito img {
+    width: 70px; 
+    height: 70px;
+    object-fit: contain;
+    background: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.item-carrito-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.item-carrito-nombre {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.controles-cantidad {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    position: relative;
+}
+
+.btn-cantidad, .btn-eliminar-item {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btn-cantidad {
+    background-color: #ffcf00;
+    color: black;
+}
+
+.btn-eliminar-item {
+    background-color: #e3000b;
+    color: white;
+}
+
+.dropdown-cantidad {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.dropdown-cantidad button {
+    padding: 8px 12px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-cantidad button:hover {
+    background-color: #f0f0f0;
+}
+
+
+/*RESPONSIVIDAD TOTAL*/
+
+@media (max-width: 1024px) {
+    .contenedor-cherno {
+        flex-direction: column;
+    }
+    .hero-banner {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.85) 60%, rgba(0, 0, 0, 0) 100%), url('../img/Fotoat1.jpeg');
+    }
+    .hero-contenido {
+        max-width: 70%; 
+    }
+}
+
+@media (max-width: 768px) {
+    .barra-navegacion {
+        padding: 10px 15px;
+    }
+    .btn-hamburguesa {
+        display: block; 
+        font-size: 30px;
+        background: none;
+        border: none;
+        color: black;
+        cursor: pointer;
+    }
+    .menu-enlaces {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: #ffffff;
+        flex-direction: column;
+        padding-top: 80px; 
+        transition: left 0.3s ease;
+        z-index: 999; 
+    }
+    .menu-enlaces.activo {
+        left: 0;
+    }
+    .menu-enlaces a {
+        color: #000000;
+        padding: 15px 30px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .panel-carrito {
+        width: 85%; 
+        max-width: 320px; 
+    }
+
+    /*RESTAURACIÓN DEL HERO BANNER MÓVIL*/
+    .hero-banner {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 100%), url('../img/Fotoat1.jpeg');
+        padding: 40px 20px;
+        justify-content: flex-start; /* Devuelve el contenido a la izquierda */
+        text-align: left;
+    }
+    .hero-contenido {
+        max-width: 100%;
+        text-align: left;
+    }
+    .hero-contenido h1 {
+        font-size: 24px;
+    }
+    .hero-contenido p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .hero-botones {
+        flex-direction: column;
+        align-items: flex-start; /* Botones a la izquierda, no centrados */
+        gap: 10px;
+    }
+    .btn-primario, .btn-secundario {
+        width: auto; /* Anula el 100% que arruinó el diseño */
+        padding: 10px 20px;
+        display: inline-block;
+    }
+    
+    /* Resto de secciones en móvil */
+    .cherno-texto {
+        text-align: left;
+    }
+    .titulo-cherno {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .nav-derecha {
+        gap: 15px; /* Reducimos el espacio en celulares para que quepa todo */
+    }
+    .btn-carrito {
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .hero-contenido h1 {
+        font-size: 22px;
+    }
+    .botones-sesion {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .btn-sesion, .btn-registro {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}
+
+
+/*Seccion de productos*/
+.seccion-productos {
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.grid-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tarjeta-producto {
+    background-color: rgba(0,0,0,0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    border: 2px solid #ffcf00;
+}
+
+.tarjeta-producto img {
+    height: 150px;
+    object-fit: contain;
+}
+
+.tarjeta-producto .precio {
+    color: #ffcf00;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-agregar {
+    background-color: #ffcf00;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+
+@media (max-width: 480px) {
+    .panel-carrito {
+        width: 75%; /* Deja ver el 25% del fondo en celulares como Pixel 8/9 */
+        max-width: 290px;
+        padding: 12px;
+    }
+
+    .item-carrito {
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .item-carrito img {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0; /* Evita que la imagen se deforme */
+    }
+
+    .btn-cantidad, .btn-eliminar-item {
+        padding: 4px 6px;
+        font-size: 11px;
+    }
+}

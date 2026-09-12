@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brick Motors</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- El Header y Menu de Navegacion -->
+    <header class="barra-navegacion">
+        
+
+        <!-- El boton Hamburguesa -->
+        <button class="btn-hamburguesa" onclick="abrirMenu()">☰</button>
+        
+        <!-- Los enlaces del menu -->
+        <nav class="menu-enlaces" id="menu">
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+            
+        </nav>
+
+         <!-- Botones de Sesion-->
+
+            <!-- Zona Derecha: Botones y Carrito -->
+        <div class="nav-derecha">
+            <div class="botones-sesion">
+                <a href="login.html" class="btn-sesion">Iniciar Sesion</a>
+                <a href="registro.html" class="btn-registro">Registrarse</a>
+            </div>
+            
+            <!-- El nuevo carrito (usa el icono de emoji y llama a tu JS) -->
+            <button class="btn-carrito" onclick="abrirCarrito()">🛒</button>
+        </div>
+        
+    </header>
+
+<main>
+    <!-- SECCIÓN HERO BANNER para el estilo  -->
+    <section class="hero-banner">
+        <div class="hero-contenido">
+            <!-- Las etiquetas amarillas pequeñas -->
+            <div class="etiquetas-hero">
+                <span class="etiqueta">Novedad</span>
+                <span class="etiqueta etiqueta-exclusivo">Exclusivos</span>
+            </div>
+
+            <!-- El Título principal y la descripción -->
+            <h1>Despliega el AT-AT SUPREMACY para dominar la batalla</h1>
+            <p>Echa un vistazo a nuestro proyecto más imponente, con estructura reforzada Technic y Sistema de marcha completa. Listo para conquistar cualquier terreno y destruir a los rebeldes.</p>
+            
+            <!-- Los botones -->
+            <div class="hero-botones">
+                <!-- Este botón puede llevar a la página secreta de "Mis Compras" -->
+                <a href="compras.html" class="btn-primario">Comprar ahora ></a>
+                <a href="productos.html" class="btn-secundario">Ver todas las novedades ></a>
+                <!--<a href="css/estayles.css" class="btn-secundario">Ver todas las novedades ></a> -->
+            </div>
+        </div>
+    </section>
+
+    <div class="fondo-oscuro">
+        <h2 class="titulo-bienvenida">¡BIENVENIDO A NUESTRA TIENDA OFICIAL DE BRICK MOTORS!</h2>
+        
+        <div class="texto-bienvenida">
+            <p>¡Aquí encontrarás todo lo necesario para romper los limites!</p>
+            <p>Explora nuestro catálogo exclusivo de Legos Tecnicos, Modelos MOC y Descubre nuestro nuevo Proyecto, solo en Brick Motors.</p>
+            <p>Cada compra no solo nos ayuda a nosotros, sino tambien a Ti a desarrollar tu pasion por la ingenieria.</p>
+        </div>
+    </div>
+
+
+    <!-- Sección Especial: Proyecto Cherno Alpha -->
+    <div class="seccion-cherno">
+        <h2 class="titulo-cherno">¡Dale un vistazo a nuestro próximo proyecto!</h2>
+        
+        <div class="contenedor-cherno">
+            <!-- LADO IZQUIERDO: La imagen que funciona como enlace -->
+            <div class="cherno-imagen">
+                <a href="cherno.html">
+                    <img src="img/chernolink.jpg" alt="Proyecto Cherno Alpha">
+                </a>
+            </div>
+
+            <!-- LADO DERECHO: El texto descriptivo -->
+            <div class="cherno-texto">
+                <p>El nuevo proyecto ambicioso de Brick Motors ya esta en camino. 5,000 piezas de algo... increible.</p>
+                <p>Pura Ingeniería Technic al mas alto nivel.</p>
+                <p>¿Tienes las agallas para saber si puedes manejar esta Brutal Maquina de Guerra?</p>
+                <p>¡Entonces que esperas!</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="seccion-animada">
+        <h2>¡Explora Nuestros Productos!</h2>
+        <img src="img/at-st.png" class="imagen-deslizable derecha" alt="caminante AT-ST">
+    </div>
+
+    
+
+<!--seccion de productos-->
+    <div class="seccion-productos">
+        <h2>Productos Destacados</h2>
+        <div class="grid-productos">
+
+            <!-- Producto 1 -->
+            <div class="tarjeta-producto">
+                <img src="img/at-st.png" alt="Caminante AT-ST">
+                <h3>Caminante AT-ST</h3>
+                <p class="precio">$150.000</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Caminante AT-ST', 'img/at-st.png', 1)">Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="tarjeta-producto">
+                <img src="img/stardestroyer.png" alt="Destructor Estelar">
+                <h3>Destructor Estelar</h3>
+                <p class="precio">$700.000</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Destructor Estelar', 'img/stardestroyer.png', 1)">Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="tarjeta-producto">
+                <img src="img/at-at.png" alt="AT-AT Supremacy">
+                <h3>AT-AT Supremacy</h3>
+                <p class="precio">$850.000</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('AT-AT Supremacy', 'img/at-at.png', 1)">Agregar al Carrito</button>
+            </div>
+
+            <!-- Producto 4 Baby-->
+            <div class="tarjeta-producto">
+                <img src="img/halconmilenario.png" alt="Halcon Milenario">
+                <h3>Halcón Milenario</h3>
+                <p class="precio">$800.000</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Halcon Milenario', 'img/halconmilenario.png', 1)">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="seccion-animada2">
+        <h2>¡Cruza la galaxia persiguiendo a los ultimos jedis que quedan!</h2>
+        <img src="img/stardestroyer.png" class="imagen-deslizable izquierda" alt="Destructor Estelar">
+
+        <h2>¿Te atreves?</h2>
+
+    </div>
+
+</main>
+    <!--Informacion de la pagina web-->
+    <footer>
+        <p>&copy; 2026 Brick Motors. Todos los derechos reservados.</p>
+        <p>Contactame aqui: brickmotors@gmail.com</p>
+
+    </footer>
+    <script src="js/inicio.js"></script>
+
+
+<!-- PANEL LATERAL DEL CARRITO -->
+    <div id="carrito" class="panel-carrito">
+        <div class="carrito-header">
+            <h3>Tu Carrito</h3>
+            <button class="btn-cerrar-carrito" onclick="abrirCarrito()">Cerrar X</button>
+        </div>
+        
+        <div id="lista-carrito">
+            <!-- Los productos inyectados por JavaScript aparecerán aquí -->
+        </div>
+        
+        <div class="carrito-totales">
+            <p>Total de Items: <span id="carrito-total-items">0</span></p>
+            <p>Total a pagar: $<span id="carrito-total-esmeraldas">0</span></p>
+        </div>
+    </div>
+</body>
+</html>
