@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Brick Motors</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- el header y menu de navegacion -->
+    <header class="barra-navegacion">
+
+        <!-- el boton hamburguesa -->
+        <button class="btn-hamburguesa" onclick="abrirMenu()">☰</button>
+
+        <!-- los enlaces del menu -->
+        <nav class="menu-enlaces" id="menu">
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+
+        <!-- zona derecha: botones y carrito -->
+        <div class="nav-derecha">
+            <div class="botones-sesion">
+                <a href="login.html" class="btn-sesion">Iniciar Sesion</a>
+                <a href="registro.html" class="btn-registro">Registrarse</a>
+            </div>
+            <button class="btn-carrito" onclick="abrirCarrito()">🛒</button>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <h1 class="title has-text-centered">Contáctanos</h1>
+            <p class="subtitle has-text-centered">¿Tienes dudas sobre algún producto? Escríbenos.</p>
+
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <div class="box">
+                        <form id="form-contacto">
+
+                            <div class="field">
+                                <label class="label" for="nombre">Nombre completo</label>
+                                <div class="control">
+                                    <input class="input" type="text" id="nombre" placeholder="Ej. Juan Pérez">
+                                </div>
+                                <p class="help is-danger is-hidden" id="error-nombre">El nombre no puede estar vacío.</p>
+                            </div>
+
+                            <div class="field">
+                                <label class="label" for="correo">Correo electrónico</label>
+                                <div class="control">
+                                    <input class="input" type="email" id="correo" placeholder="ejemplo@gmail.com">
+                                </div>
+                                <p class="help is-danger is-hidden" id="error-correo">Ingresa un correo válido de @gmail.com.</p>
+                            </div>
+
+                            <div class="field">
+                                <label class="label" for="mensaje">Mensaje</label>
+                                <div class="control">
+                                    <textarea class="textarea" id="mensaje" placeholder="Escribe tu consulta..."></textarea>
+                                </div>
+                                <p class="help is-danger is-hidden" id="error-mensaje">El mensaje no puede estar vacio.</p>
+                            </div>
+
+                            <div class="control">
+                                <button type="submit" class="button is-primary is-fullwidth">Enviar mensaje</button>
+                            </div>
+
+                            <p class="help is-success is-hidden mt-3" id="mensaje-exito">¡Mensaje enviado con exito!</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/contacto.js"></script>
+
+    <!-- panel lateral del carrito -->
+    <div id="carrito" class="panel-carrito">
+        <div class="carrito-header">
+            <h3>Tu Carrito</h3>
+            <button class="btn-cerrar-carrito" onclick="abrirCarrito()">Cerrar X</button>
+        </div>
+        <div id="lista-carrito"></div>
+        <div class="carrito-totales">
+            <p>Total de Items: <span id="carrito-total-items">0</span></p>
+            <p>Total a pagar: $<span id="carrito-total-esmeraldas">0</span></p>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <p>&copy; 2026 Brick Motors. Todos los derechos reservados.</p>
+        <p>Contactame aqui: brickmotors@gmail.com</p>
+
+    </footer>
+    <script src="js/inicio.js"></script>
+
+</body>
+</html>
