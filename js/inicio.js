@@ -338,6 +338,26 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     }
 });
 
+
+// ANIMACIÓN DE IMPACTO CHERNO ALPHA
+document.addEventListener("DOMContentLoaded", function() {
+    const escenario = document.getElementById('escenario-pelea'); 
+    if (escenario) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    escenario.classList.add('animar');
+                } else {
+                    escenario.classList.remove('animar');
+                }
+            });
+        }, { threshold: 0.3 }); 
+
+        observer.observe(escenario);
+    }
+});
+
+
 //function inyetarFooter(){
   //  document.getElementById("footer").innerHTML = "<nos jakiaron>"
 //}

@@ -93,7 +93,7 @@
 
 <!--SECCIÓN DE ANIMACIÓN PARA EL IMPACTO-->
     <section class="seccion-impacto">
-        <h2 class="titulo-impacto">¿Problemas con Full Stack?</h2>
+        <h2 class="titulo-impacto">¿Problemas con FullStack?</h2>
 
         <div class="escenario-pelea" id="escenario-pelea">
             <img src="img/kaiju.png" alt="Kaiju recibiendo golpe" class="luchador kaiju">
@@ -131,22 +131,6 @@
     <script src="js/inicio.js"></script>
     
 
-<script>
-        // Observador que detecta cuándo aparece la zona de pelea (ACTUALIZADO)
-        document.addEventListener("DOMContentLoaded", function() {
-            const escenario = document.getElementById('escenario-pelea');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        escenario.classList.add('animar'); // Si bajas el scroll, se unen
-                    } else {
-                        escenario.classList.remove('animar'); // Si subes el scroll, se vuelven a separar
-                    }
-                });
-            }, { threshold: 0.3 }); // Se activa cuando el 30% del área es visible
 
-            if(escenario) observer.observe(escenario);
-        });
-    </script>
 </body>
 </html>
