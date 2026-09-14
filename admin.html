@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración - Brick Motors</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="columns is-gapless" style="min-height: 100vh;">
+
+        <!-- menu lateral -->
+        <aside class="column is-2 has-background-dark p-4">
+            <p class="title is-5 has-text-white mb-5">🧱 Brick Motors Admin</p>
+
+            <aside class="menu">
+                <p class="menu-label has-text-grey-light">General</p>
+                <ul class="menu-list">
+                    <li><a class="has-text-white" href="index.html">⬅ Volver a la tienda</a></li>
+                </ul>
+
+                <p class="menu-label has-text-grey-light">Gestion</p>
+                <ul class="menu-list">
+                    <li><a class="has-text-white" onclick="mostrarSeccion('productos')">📦 Productos</a></li>
+                    <li><a class="has-text-white" onclick="mostrarSeccion('usuarios')">👤 Usuarios</a></li>
+                </ul>
+            </aside>
+        </aside>
+
+        <!-- contenido -->
+        <main class="column p-6">
+
+            <!-- seccion productos -->
+            <section id="seccion-productos">
+                <h1 class="title">Productos</h1>
+
+                <button class="button is-primary mb-4" onclick="mostrarFormularioProducto()">+ Nuevo producto</button>
+
+                <table class="table is-fullwidth is-striped is-hoverable">
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                            <th>Categoria</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-productos"></tbody>
+                </table>
+
+                <div class="box is-hidden" id="form-box-producto">
+                    <h2 class="subtitle">Nuevo producto</h2>
+                    <form id="form-producto">
+
+                        <div class="field">
+                            <label class="label">Codigo</label>
+                            <div class="control">
+                                <input class="input" type="text" id="p-codigo" placeholder="Ej. ATAT-001">
+                            </div>
+                            <p class="help is-danger is-hidden" id="error-p-codigo">El código no puede estar vacío.</p>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Nombre</label>
+                            <div class="control">
+                                <input class="input" type="text" id="p-nombre" placeholder="Ej. AT-AT Supremacy">
+                            </div>
+                            <p class="help is-danger is-hidden" id="error-p-nombre">El nombre no puede estar vacío.</p>
+                        </div>
+
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <label class="label">Precio</label>
+                                    <div class="control">
+                                        <input class="input" type="number" id="p-precio" min="0" placeholder="0">
+                                    </div>
+                                    <p class="help is-danger is-hidden" id="error-p-precio">El precio no puede estar vacío.</p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <label class="label">Stock</label>
+                                    <div class="control">
+                                        <input class="input" type="number" id="p-stock" min="0" placeholder="0">
+                                    </div>
+                                    <p class="help is-danger is-hidden" id="error-p-stock">El stock no puede estar vacío.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Categoria</label>
+                            <div class="control">
+                                <div class="select is-fullwidth">
+                                    <select id="p-categoria">
+                                        <option value="">-- Selecciona una categoria --</option>
+                                        <option value="Technic">Technic</option>
+                                        <option value="Star Wars">Star Wars</option>
+                                        <option value="MOC">MOC</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="help is-danger is-hidden" id="error-p-categoria">Debes seleccionar una categoría.</p>
+                        </div>
+
+                        <div class="field is-grouped mt-4">
+                            <div class="control">
+                                <button type="submit" class="button is-primary">Guardar producto</button>
+                            </div>
+                            <div class="control">
+                                <button type="button" class="button is-light" onclick="ocultarFormularioProducto()">Cancelar</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </section>
+
+            <!-- seccion usuarios -->
+            <section id="seccion-usuarios" class="is-hidden">
+                <h1 class="title">Usuarios</h1>
+
+                <button class="button is-primary mb-4" onclick="mostrarFormularioUsuario()">+ Nuevo usuario</button>
+
+                <table class="table is-fullwidth is-striped is-hoverable">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-usuarios"></tbody>
+                </table>
+
+                <div class="box is-hidden" id="form-box-usuario">
+                    <h2 class="subtitle">Nuevo usuario</h2>
+                    <form id="form-usuario">
+
+                        <div class="field">
+                            <label class="label">Nombre</label>
+                            <div class="control">
+                                <input class="input" type="text" id="u-nombre" placeholder="Ej. Juan Pérez">
+                            </div>
+                            <p class="help is-danger is-hidden" id="error-u-nombre">El nombre no puede estar vacío.</p>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Correo</label>
+                            <div class="control">
+                                <input class="input" type="email" id="u-correo" placeholder="ejemplo@gmail.com">
+                            </div>
+                            <p class="help is-danger is-hidden" id="error-u-correo">Ingresa un correo válido de @gmail.com.</p>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Tipo de usuario</label>
+                            <div class="control">
+                                <div class="select is-fullwidth">
+                                    <select id="u-tipo">
+                                        <option value="">-- Selecciona un tipo --</option>
+                                        <option value="Administrador">Administrador</option>
+                                        <option value="Vendedor">Vendedor</option>
+                                        <option value="Cliente">Cliente</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="help is-danger is-hidden" id="error-u-tipo">Debes seleccionar un tipo de usuario.</p>
+                        </div>
+
+                        <div class="field is-grouped mt-4">
+                            <div class="control">
+                                <button type="submit" class="button is-primary">Guardar usuario</button>
+                            </div>
+                            <div class="control">
+                                <button type="button" class="button is-light" onclick="ocultarFormularioUsuario()">Cancelar</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2026 Brick Motors. Todos los derechos reservados.</p>
+        <p>Contactame aqui: brickmotors@gmail.com</p>
+    </footer>
+
+    <script src="js/inicio.js"></script>
+</body>
+</html>
