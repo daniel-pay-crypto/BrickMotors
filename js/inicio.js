@@ -300,55 +300,6 @@ window.addEventListener('scroll', () => {
 
 
 
-//validaciones de gmailkllll
-
-/*document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Evita que la página se recargue
-
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
-
-    //Ccampos obligatorios
-    if (!email || !password) {
-        alert("Error: El usuario y la contraseña no pueden estar vacíos.");
-        return;
-    }
-
-    //formato de entrada
-    const emailRegex = /^[^\s@]+@[^\s@]+\.cl$/; 
-    if (!emailRegex.test(email)) {
-        alert("Error: Ingresa un correo válido (ejemplo: usuario@dominio.cl).");
-        return;
-    }
-
-    // extensión de clave (Mínimo 6 caracteres)
-    if (password.length < 6) {
-        alert("Error: La contraseña debe tener al menos 6 caracteres.");
-        return;
-    }
-
-    // Control de credenciales y LocalStorage
-    const usuariosMock = [
-        { email: "admin@dominio.cl", password: "password123", role: "admin" },
-        { email: "cliente@dominio.cl", password: "password123", role: "cliente" }
-    ];
-
-    const usuarioValido = usuariosMock.find(u => u.email === email && u.password === password);
-
-    if (usuarioValido) {
-        // Guardar sesión
-        localStorage.setItem('session', JSON.stringify({ email: usuarioValido.email, role: usuarioValido.role }));
-        
-        // Redirección por rol
-        window.location.href = usuarioValido.role === 'admin' ? 'admin.html' : 'index.html';
-    } else {
-        // Mensaje genérico para no dar pistas
-        alert("Usuario o contraseña incorrectos.");
-    }
-}); */
-
-
-
 // Guardar el carrito en el navegador
 function guardarCarritoEnMemoria() {
     localStorage.setItem('carritoBrickMotors', JSON.stringify(estadoCarrito));
@@ -393,6 +344,10 @@ function cargarCarritoDeMemoria() {
 
 //ejecuto la carga automáticamente apenas se lee este archivo
 cargarCarritoDeMemoria();
+
+
+
+
 
 //function inyetarFooter(){
   //  document.getElementById("footer").innerHTML = "<nos jakiaron>"
