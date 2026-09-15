@@ -420,6 +420,10 @@ function cargarCarritoDeMemoria() {
 //ejecuto la carga automáticamente apenas se lee este archivo
 cargarCarritoDeMemoria();
 
+
+
+
+
 //function inyetarFooter(){
   //  document.getElementById("footer").innerHTML = "<nos jakiaron>"
 //}

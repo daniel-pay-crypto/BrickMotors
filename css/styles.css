@@ -598,6 +598,106 @@ footer {
     }
 }
 
+
+/* SECCIÓN NOSOTROS Y EL FONDO Y OVERLAY */
+.seccion-nosotros-hero {
+    /* Color de fondo oscuro para integrarse suavemente con los bordes de la foto */
+    background-color: #07080a; 
+    background-image: url('../img/nosotros-fondo.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+    /* 'contain' obliga al navegador a mostrar la imagen 100% entera sin recortar nada */
+    background-size: contain; 
+    
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+}
+/* Caja Oscura Translúcida */
+.overlay-nosotros {
+    background-color: rgba(10, 10, 15, 0.45);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    max-width: 1050px;
+    width: 100%;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.titulo-nosotros {
+    font-size: 2.4rem;
+    color: #ffcc00;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8)
+}
+
+.subtitulo-nosotros {
+    color: #d1d5db;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Tarjetas del Equipo */
+.grid-equipo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.tarjeta-desarrollador {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 1.75rem 1.25rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta-desarrollador:hover {
+    transform: translateY(-5px);
+    border-color: #ffcc00;
+}
+
+.tarjeta-desarrollador h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.tarjeta-desarrollador .rol {
+    display: inline-block;
+    color: #ffcc00;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.tarjeta-desarrollador p {
+    color: #cccccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+
+/* Eliminar el fondo azul de LEGO en la página Nosotros */
+body.pagina-nosotros {
+    background-color: #07080a !important;
+    background-image: none !important;
+}
+
+/* Integrar el footer de forma continua sin franjas */
+body.pagina-nosotros footer {
+    background-color: #07080a;
+    margin-top: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 /*ESTILOS PARA EL VIDEO DE CHERNO ALPHA*/
 
 /* Contenedor principal de la sección */
