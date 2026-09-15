@@ -66,9 +66,14 @@ function agregarAlCarrito(nombre, imagen, cantidad) {
 
     let precioUnitario = precioBase[nombre] || 0;
     estadoCarrito[itemId] = {
+        nombre: nombre,
+        imagen: imagen,
         precio : precioUnitario,
         cantidad : parseInt(cantidad)
     };
+
+    actualizarTotales();
+    guardarCarritoEnMemoria();
 
     // Creamos el recuadro blanco con el botón de Eliminar y el Menú Desplegable
     const itemHTML = `
@@ -132,6 +137,8 @@ function cambiarCantidad(itemId, nuevaCantidad) {
     }
     actualizarTotales();
 
+    guardarCarritoEnMemoria();
+
 }
 
 
@@ -159,6 +166,8 @@ function eliminarDelCarrito(itemId) {
     //Borramos el elemento de la memoria y recalculamos
     delete estadoCarrito[itemId];
     actualizarTotales();
+
+    guardarCarritoEnMemoria();
 }
 
 
@@ -362,7 +371,54 @@ document.addEventListener("DOMContentLoaded", function() {
 
         observer.observe(escenario);
     }
-});
+}); */
+
+
+
+// Guardar el carrito en el navegador
+function guardarCarritoEnMemoria() {
+    localStorage.setItem('carritoBrickMotors', JSON.stringify(estadoCarrito));
+}
+
+//cargo y dibujar el carrito al abrir la página
+function cargarCarritoDeMemoria() {
+    const carritoGuardado = localStorage.getItem('carritoBrickMotors');
+    
+    if (carritoGuardado) {
+        estadoCarrito = JSON.parse(carritoGuardado);
+        const panelCarrito = document.getElementById('lista-carrito');
+        panelCarrito.innerHTML = ''; // Limpiamos el panel antes de rellenar
+        
+        // Dibujo cada producto recuperado de la memoria
+        for (let itemId in estadoCarrito) {
+            let prod = estadoCarrito[itemId];
+            
+            panelCarrito.innerHTML += `
+                <div class="item-carrito" id="${itemId}">
+                    <img src="${prod.imagen}" alt="${prod.nombre}">
+                    <div class="item-carrito-info">
+                        <span class="item-carrito-nombre">${prod.nombre}</span>
+                        <div class="controles-cantidad">
+                            <button class="btn-cantidad" onclick="abrirMenuCantidad('${itemId}')">
+                                <span id="qty-${itemId}">${prod.cantidad}</span> u. ▼
+                            </button>
+                            <!-- Menú oculto -->
+                            <div class="dropdown-cantidad" id="drop-${itemId}" style="display: none;">
+                                <button onclick="cambiarCantidad('${itemId}', 2)">2 u.</button>
+                                <button onclick="cambiarCantidad('${itemId}', 5)">5 u.</button>
+                                <button onclick="eliminarDelCarrito('${itemId}')">Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        actualizarTotales();
+    }
+}
+
+//ejecuto la carga automáticamente apenas se lee este archivo
+cargarCarritoDeMemoria();
 
 //function inyetarFooter(){
   //  document.getElementById("footer").innerHTML = "<nos jakiaron>"
