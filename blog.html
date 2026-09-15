@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Brick Motors</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header class="barra-navegacion">
+
+        <button class="btn-hamburguesa" onclick="abrirMenu()">☰</button>
+
+        <nav class="menu-enlaces" id="menu">
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="cherno.html">Cherno</a>
+        </nav>
+
+        <div class="nav-derecha">
+            <div class="botones-sesion">
+                <a href="login.html" class="btn-sesion">Iniciar Sesion</a>
+                <a href="registro.html" class="btn-registro">Registrarse</a>
+            </div>
+
+            <button class="btn-carrito" onclick="abrirCarrito()">🛒</button>
+        </div>
+
+    </header>
+
+<main class="contenedor-blog">
+    <h1 class="titulo-blog">Transmisiones desde Brick Motors</h1>
+
+    <div class="grid-blogs">
+
+        <a href="detalle-blog.html?id=1" class="tarjeta-blog">
+            <img src="img/at-st.png" alt="Nuevos sets Star Wars" class="img-blog">
+            <div class="contenido-tarjeta">
+                <h3>Los Nuevos Sets Star Wars Ya Están Disponibles</h3>
+                <p>Reforzamos el catálogo con diez sets nuevos, desde packs de combate hasta el Caza TIE y Ala-X Fusionados. Revisa qué llegó a la tienda.</p>
+                <span class="btn-leer-mas">Leer transmisión completa</span>
+            </div>
+        </a>
+
+        <a href="detalle-blog.html?id=2" class="tarjeta-blog">
+            <img src="img/Fotoat1.jpeg" alt="Armado de MOC Technic" class="img-blog">
+            <div class="contenido-tarjeta">
+                <h3>Detrás de Cámaras: Armando Nuestro Primer MOC Technic</h3>
+                <p>Te mostramos cómo nació el primer modelo original de Brick Motors, pieza por pieza, motor por motor.</p>
+                <span class="btn-leer-mas">Leer transmisión completa</span>
+            </div>
+        </a>
+
+        <a href="detalle-blog.html?id=3" class="tarjeta-blog">
+            <img src="img/halconmilenario.png" alt="Halcón Milenario" class="img-blog">
+            <div class="contenido-tarjeta">
+                <h3>El Halcón Milenario Aterriza en Brick Motors</h3>
+                <p>La nave más rápida de la galaxia ya tiene su lugar en nuestra vitrina. Conoce los detalles de este modelo destacado.</p>
+                <span class="btn-leer-mas">Leer transmisión completa</span>
+            </div>
+        </a>
+
+    </div>
+</main>
+
+    <footer>
+        <p>&copy; 2026 Brick Motors. Todos los derechos reservados.</p>
+        <p>Contactame aqui: brickmotors@gmail.com</p>
+    </footer>
+    <script src="js/inicio.js"></script>
+
+    <div id="carrito" class="panel-carrito">
+        <div class="carrito-header">
+            <h3>Tu Carrito</h3>
+            <button class="btn-cerrar-carrito" onclick="abrirCarrito()">Cerrar X</button>
+        </div>
+
+        <div id="lista-carrito">
+        </div>
+
+        <div class="carrito-totales">
+            <p>Total de Items: <span id="carrito-total-items">0</span></p>
+            <p>Total a pagar: $<span id="carrito-total-esmeraldas">0</span></p>
+        </div>
+    </div>
+</body>
+</html>
