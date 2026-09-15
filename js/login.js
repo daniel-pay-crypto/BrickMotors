@@ -1,34 +1,24 @@
 // patron simple para validar correos de gmail
 const patronGmail = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
 
-const formContacto = document.getElementById('form-contacto');
+const formLogin = document.getElementById('form-login');
 
-formContacto.addEventListener('submit', (e) => {
-    // evita que la pagina se recargue
+formLogin.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const nombre = document.getElementById('nombre').value.trim();
     const correo = document.getElementById('correo').value.trim();
-    const mensaje = document.getElementById('mensaje').value.trim();
+    const contrasena = document.getElementById('contrasena').value.trim();
 
-    const errorNombre = document.getElementById('error-nombre');
     const errorCorreo = document.getElementById('error-correo');
-    const errorMensaje = document.getElementById('error-mensaje');
+    const errorContrasena = document.getElementById('error-contrasena');
     const mensajeExito = document.getElementById('mensaje-exito');
 
     // oculta errores antes de validar de nuevo
-    errorNombre.classList.add('is-hidden');
     errorCorreo.classList.add('is-hidden');
-    errorMensaje.classList.add('is-hidden');
+    errorContrasena.classList.add('is-hidden');
     mensajeExito.classList.add('is-hidden');
 
     let formularioValido = true;
-
-    // nada puede quedar vacio
-    if (nombre === '') {
-        errorNombre.classList.remove('is-hidden');
-        formularioValido = false;
-    }
 
     // el correo debe ser un gmail bien escrito
     if (correo === '' || !patronGmail.test(correo)) {
@@ -36,13 +26,19 @@ formContacto.addEventListener('submit', (e) => {
         formularioValido = false;
     }
 
-    if (mensaje === '') {
-        errorMensaje.classList.remove('is-hidden');
+    // la contrasena no puede quedar vacia
+    if (contrasena === '') {
+        errorContrasena.classList.remove('is-hidden');
         formularioValido = false;
     }
 
     if (formularioValido) {
         mensajeExito.classList.remove('is-hidden');
-        formContacto.reset();
+        formLogin.reset();
+
+        // si el correo es del admin, entra al panel de administracion
+        if (correo.toLowerCase() === 'admin@gmail.com') {
+            window.location.href = 'admin.html';
+        }
     }
 });
