@@ -371,7 +371,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         observer.observe(escenario);
     }
-}); */
+}); 
 
 
 
