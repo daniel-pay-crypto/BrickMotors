@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="titulo-pagina">Blog - Brick Motors</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header class="barra-navegacion">
+
+        <button class="btn-hamburguesa" onclick="abrirMenu()">☰</button>
+
+        <nav class="menu-enlaces" id="menu">
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="cherno.html">Cherno</a>
+        </nav>
+
+        <div class="nav-derecha">
+            <div class="botones-sesion">
+                <a href="login.html" class="btn-sesion">Iniciar Sesion</a>
+                <a href="registro.html" class="btn-registro">Registrarse</a>
+            </div>
+
+            <button class="btn-carrito" onclick="abrirCarrito()">🛒</button>
+        </div>
+
+    </header>
+
+<main class="contenedor-detalle-blog">
+    <a href="blog.html" class="btn-volver">← Volver al Blog</a>
+
+    <article class="articulo-completo">
+        <h1 class="titulo-articulo" id="articulo-titulo"></h1>
+        <p class="fecha-articulo" id="articulo-fecha"></p>
+
+        <img src="" alt="" class="img-destacada" id="articulo-imagen">
+
+        <div class="texto-articulo" id="articulo-contenido">
+        </div>
+    </article>
+</main>
+
+    <footer>
+        <p>&copy; 2026 Brick Motors. Todos los derechos reservados.</p>
+        <p>Contactame aqui: brickmotors@gmail.com</p>
+    </footer>
+
+    <script>
+        // Los 3 artículos del blog, unificados en un solo archivo.
+        // El artículo mostrado depende del parámetro ?id= en la URL (ej: detalle-blog.html?id=2)
+        const articulosBlog = {
+            "1": {
+                titulo: "Los Nuevos Sets Star Wars Ya Están Disponibles",
+                fecha: "Publicado el 10 de Septiembre, 2026 por el equipo de Brick Motors",
+                imagen: "img/at-st.png",
+                alt: "Nuevos sets Star Wars",
+                contenidoHTML: `
+                    <p>La flota de Brick Motors se agranda. Sumamos diez sets nuevos a nuestra sección de Productos, todos inspirados en las últimas naves y personajes de la galaxia.</p>
+
+                    <h2>Packs de Combate</h2>
+                    <p>Llegaron los packs de Emboscada en Mandalore, Soldado Clon y Droide de Combate, Sitio de Mandalore y Clon Troopers de la 501. Ideales si buscas escenas de batalla completas para tu vitrina.</p>
+
+                    <h2>Naves y Vehículos</h2>
+                    <p>También está disponible el Caza Estelar N-1 de Mando y Grogu, el Hogar de Grogu y el imponente set del Caza TIE y Ala-X Fusionados, uno de los más grandes que hemos tenido en catálogo.</p>
+
+                    <h2>Coleccionables</h2>
+                    <p>Para quienes prefieren piezas de exhibición, sumamos el Casco de Piloto de AT-RT del Remanente Imperial y el Busto de Darth Vader.</p>
+
+                    <p>Puedes revisar todos los precios y agregar tus favoritos al carrito directamente desde la sección de Productos.</p>
+                `
+            },
+            "2": {
+                titulo: "Detrás de Cámaras: Armando Nuestro Primer MOC Technic",
+                fecha: "Publicado el 11 de Septiembre, 2026 por el equipo de Brick Motors",
+                imagen: "img/Fotoat1.jpeg",
+                alt: "Armado de MOC Technic",
+                contenidoHTML: `
+                    <p>Antes de convertirnos en una tienda, Brick Motors nació de un banco de trabajo lleno de piezas Technic. Este fue nuestro primer modelo original, armado a mano y a prueba y error.</p>
+
+                    <h2>El Chasis</h2>
+                    <p>Todo modelo Technic serio empieza por el chasis. Usamos vigas reforzadas y ejes cruzados para que la estructura aguantara el peso de los motores sin flectarse.</p>
+
+                    <h2>El Sistema de Marcha</h2>
+                    <p>Incorporamos un motor conectado a un tren de engranajes reductores, lo que nos permitió lograr más torque a costa de velocidad. Ese mismo principio es el que usamos hoy en proyectos como el AT-AT Supremacy.</p>
+
+                    <h2>Lo que Aprendimos</h2>
+                    <p>Cada tornillo mal puesto fue una lección. Ese primer modelo nos enseñó a planificar el cableado interno antes de cerrar los paneles, algo que hoy aplicamos en todos los sets que armamos para la tienda.</p>
+
+                    <p>Si te gustan los proyectos grandes, no te pierdas el Proyecto Cherno Alpha, nuestra siguiente gran construcción.</p>
+                `
+            },
+            "3": {
+                titulo: "El Halcón Milenario Aterriza en Brick Motors",
+                fecha: "Publicado el 12 de Septiembre, 2026 por el equipo de Brick Motors",
+                imagen: "img/halconmilenario.png",
+                alt: "Halcón Milenario",
+                contenidoHTML: `
+                    <p>Después de varias semanas de pedidos, el Halcón Milenario ya tiene su lugar fijo en la vitrina de Brick Motors, junto al Caminante AT-ST y el Destructor Estelar.</p>
+
+                    <h2>Un Clásico de la Galaxia</h2>
+                    <p>Pocas naves son tan reconocibles como el Halcón Milenario. Su diseño irregular esconde cientos de piezas pequeñas que le dan ese aspecto de nave remendada mil veces y siempre lista para escapar.</p>
+
+                    <h2>Por Qué lo Sumamos al Catálogo</h2>
+                    <p>Nos pareció el complemento perfecto para quienes ya tienen el Destructor Estelar y el AT-AT Supremacy: la escena rebelde contra el Imperio, completa, en una sola vitrina.</p>
+
+                    <p>Puedes agregarlo directamente a tu carrito desde nuestra página de Productos Destacados.</p>
+                `
+            }
+        };
+
+        // Lee el parámetro ?id= de la URL para saber qué artículo mostrar (por defecto, el 1)
+        const parametros = new URLSearchParams(window.location.search);
+        const idArticulo = parametros.get('id') || "1";
+        const articulo = articulosBlog[idArticulo] || articulosBlog["1"];
+
+        document.getElementById('titulo-pagina').innerText = articulo.titulo + " - Brick Motors";
+        document.getElementById('articulo-titulo').innerText = articulo.titulo;
+        document.getElementById('articulo-fecha').innerText = articulo.fecha;
+        document.getElementById('articulo-imagen').src = articulo.imagen;
+        document.getElementById('articulo-imagen').alt = articulo.alt;
+        document.getElementById('articulo-contenido').innerHTML = articulo.contenidoHTML;
+    </script>
+
+    <script src="js/inicio.js"></script>
+
+    <div id="carrito" class="panel-carrito">
+        <div class="carrito-header">
+            <h3>Tu Carrito</h3>
+            <button class="btn-cerrar-carrito" onclick="abrirCarrito()">Cerrar X</button>
+        </div>
+
+        <div id="lista-carrito">
+        </div>
+
+        <div class="carrito-totales">
+            <p>Total de Items: <span id="carrito-total-items">0</span></p>
+            <p>Total a pagar: $<span id="carrito-total-esmeraldas">0</span></p>
+        </div>
+    </div>
+</body>
+</html>
