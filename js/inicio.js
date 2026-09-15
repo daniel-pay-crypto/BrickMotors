@@ -2,9 +2,19 @@
 // diccionario de precios
 const precioBase = {
     "Caminante AT-ST": 150000,
-    "Destructor Estelar": 70000,
-    "AT-AT Supremacy": 85000,
-    "Halcon Milenario": 80000
+    "Destructor Estelar": 700000,
+    "AT-AT Supremacy": 850000,
+    "Halcon Milenario": 800000,
+    "LEGO® Star Wars Pack De Combate: Emboscada En Mandalore": 29690,
+    "LEGO® Star Wars Caza Estelar N-1 De Mando Y Grogu": 49490,
+    "Lego Star Wars Hogar De Grogu": 31670,
+    "Pack de Combate: Soldado Clon y Droide de Combate": 49990,
+    "Pack de Combate: Sitio de Mandalore": 39990,
+    "Set LEGO Star Wars Tm Caza TIE y Ala-X Fusionados": 239990,
+    "Set De Construcción Lego 75412 Star Wars": 31662,
+    "Pack de Combate: Clon Troopers de la 501": 32990,
+    "Casco de Piloto de AT-RT del Remanente Imperial": 109990,
+    "Busto de Darth Vader": 89990
 }
 
 //Aca guardaremos lo que el usuario tiene en el carrito
@@ -180,6 +190,7 @@ let inventario = {
 };
 let totalItems = 0;
 let totalPrecio = 0;
+let totalEsmeraldas = 0;
 
 
 
@@ -300,58 +311,6 @@ window.addEventListener('scroll', () => {
 
 
 
-// validaciones de gmailkllll
-const loginForm = document.getElementById('loginForm');
-
-// Solo ejecutamos este bloque si el formulario de login existe en la página
-if (loginForm) {
-    loginForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Evita que la página se recargue
-
-        const email = document.getElementById('email').value.trim();
-        const password = document.getElementById('password').value.trim();
-
-        // Campos obligatorios
-        if (!email || !password) {
-            alert("Error: El usuario y la contraseña no pueden estar vacíos.");
-            return;
-        }
-
-        // Formato de entrada
-        const emailRegex = /^[^\s@]+@[^\s@]+\.cl$/; 
-        if (!emailRegex.test(email)) {
-            alert("Error: Ingresa un correo válido (ejemplo: usuario@dominio.cl).");
-            return;
-        }
-
-        // Extensión de clave (Mínimo 6 caracteres)
-        if (password.length < 6) {
-            alert("Error: La contraseña debe tener al menos 6 caracteres.");
-            return;
-        }
-
-        // Control de credenciales y LocalStorage
-        const usuariosMock = [
-            { email: "admin@dominio.cl", password: "password123", role: "admin" },
-            { email: "cliente@dominio.cl", password: "password123", role: "cliente" }
-        ];
-
-        const usuarioValido = usuariosMock.find(u => u.email === email && u.password === password);
-
-        if (usuarioValido) {
-            // Guardar sesión
-            localStorage.setItem('session', JSON.stringify({ email: usuarioValido.email, role: usuarioValido.role }));
-            
-            // Redirección por rol
-            window.location.href = usuarioValido.role === 'admin' ? 'admin.html' : 'index.html';
-        } else {
-            // Mensaje genérico para no dar pistas
-            alert("Usuario o contraseña incorrectos.");
-        }
-    });
-}
-
-
 // ANIMACIÓN DE IMPACTO CHERNO ALPHA VS KAIJU
 document.addEventListener("DOMContentLoaded", function() {
     const escenario = document.getElementById('escenario-pelea'); 
@@ -392,6 +351,11 @@ function cargarCarritoDeMemoria() {
         // Dibujo cada producto recuperado de la memoria
         for (let itemId in estadoCarrito) {
             let prod = estadoCarrito[itemId];
+            // Usa siempre el precio vigente, incluso si el carrito fue guardado
+            // antes de una actualización de precios.
+            if (precioBase[prod.nombre] !== undefined) {
+                prod.precio = precioBase[prod.nombre];
+            }
             
             panelCarrito.innerHTML += `
                 <div class="item-carrito" id="${itemId}">
