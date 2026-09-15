@@ -184,7 +184,7 @@ let totalPrecio = 0;
 
 
 
-// 2. Función principal que se activa al hacer clic
+//   Función principal que se activa al hacer clic
 function agregarObjeto(tipo, precio) {
     // Validación del nombre (Desafío Extra)
     let nombreJugador = document.getElementById("jugador").value;
@@ -197,25 +197,25 @@ function agregarObjeto(tipo, precio) {
     // Actualizamos el nombre en el resumen
     document.getElementById("nombre-resumen").innerText = nombreJugador;
 
-    // 3. Regla de Negocio (Validación de 64 unidades)
+    //  Regla de Negocio (Validación de 64 unidades)
     if (inventario[tipo] >= 64) {
         alert("¡Inventario lleno para este objeto!");
         return; // Detiene la función, no suma más
     }
 
-    // 4. Sumar al inventario y a los acumuladores
+    //   Sumar al inventario y a los acumuladores
     inventario[tipo]++;           // Suma 1 al objeto específico
     totalItems++;                 // Suma 1 al total de ítems
     totalEsmeraldas += precio;    // Suma el precio al costo total
 
-    // 5. Manipulación del DOM (Actualizar pantalla sin recargar)
+    // Manipulación del DOM (Actualizar pantalla sin recargar)
     document.getElementById("cant-" + tipo).innerText = inventario[tipo];
     document.getElementById("total-items").innerText = totalItems;
     document.getElementById("total-esmeraldas").innerText = totalEsmeraldas;
 }
 
 
-// 3. Restar productos
+// restar productos
 function quitarObjeto(tipo, precio) {
     // Solo podemos quitar si hay más de 0
     if (inventario[tipo] > 0) {
@@ -227,7 +227,7 @@ function quitarObjeto(tipo, precio) {
     }
 }
 
-// 4. Actualizar todos los textos en la página
+// Actualizar todos los textos en la página
 function actualizarPantalla(tipo) {
     // A) Actualiza la tarjeta verde y el panel de en medio
     document.getElementById("cant-" + tipo).innerText = inventario[tipo];
@@ -239,7 +239,7 @@ function actualizarPantalla(tipo) {
     document.getElementById("carrito-total-items").innerText = totalItems;
     document.getElementById("carrito-total-esmeraldas").innerText = totalEsmeraldas;
 
-    // C) Aparecer u ocultar el objeto en el carrito si llega a 0
+    // Aparecer u ocultar el objeto en el carrito si llega a 0
     let itemCarrito = document.getElementById("item-" + tipo);
     if (inventario[tipo] > 0) {
         itemCarrito.style.display = "flex"; // Lo muestra
@@ -248,7 +248,7 @@ function actualizarPantalla(tipo) {
     }
 }
 
-// Detectamos cada vez que el usuario mueve la rueda
+// Detecta cada vez que el usuario mueve la rueda
 window.addEventListener('scroll', () => {
     let altoPantalla = window.innerHeight;
 
@@ -258,7 +258,7 @@ window.addEventListener('scroll', () => {
         document.querySelector('.seccion-animada2')
     ];
 
-    // 2. Evaluamos CADA sección por separado
+    //  Evaluo cada sección por separado
     secciones.forEach(seccion => {
         // Si la sección no existe en la página, la saltamos para evitar errores
         if (!seccion) return; 
@@ -300,50 +300,76 @@ window.addEventListener('scroll', () => {
 
 
 
-//validaciones de gmailkllll
+// validaciones de gmailkllll
+const loginForm = document.getElementById('loginForm');
 
-/*document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Evita que la página se recargue
+// Solo ejecutamos este bloque si el formulario de login existe en la página
+if (loginForm) {
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Evita que la página se recargue
 
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
 
-    //Ccampos obligatorios
-    if (!email || !password) {
-        alert("Error: El usuario y la contraseña no pueden estar vacíos.");
-        return;
-    }
+        // Campos obligatorios
+        if (!email || !password) {
+            alert("Error: El usuario y la contraseña no pueden estar vacíos.");
+            return;
+        }
 
-    //formato de entrada
-    const emailRegex = /^[^\s@]+@[^\s@]+\.cl$/; 
-    if (!emailRegex.test(email)) {
-        alert("Error: Ingresa un correo válido (ejemplo: usuario@dominio.cl).");
-        return;
-    }
+        // Formato de entrada
+        const emailRegex = /^[^\s@]+@[^\s@]+\.cl$/; 
+        if (!emailRegex.test(email)) {
+            alert("Error: Ingresa un correo válido (ejemplo: usuario@dominio.cl).");
+            return;
+        }
 
-    // extensión de clave (Mínimo 6 caracteres)
-    if (password.length < 6) {
-        alert("Error: La contraseña debe tener al menos 6 caracteres.");
-        return;
-    }
+        // Extensión de clave (Mínimo 6 caracteres)
+        if (password.length < 6) {
+            alert("Error: La contraseña debe tener al menos 6 caracteres.");
+            return;
+        }
 
-    // Control de credenciales y LocalStorage
-    const usuariosMock = [
-        { email: "admin@dominio.cl", password: "password123", role: "admin" },
-        { email: "cliente@dominio.cl", password: "password123", role: "cliente" }
-    ];
+        // Control de credenciales y LocalStorage
+        const usuariosMock = [
+            { email: "admin@dominio.cl", password: "password123", role: "admin" },
+            { email: "cliente@dominio.cl", password: "password123", role: "cliente" }
+        ];
 
-    const usuarioValido = usuariosMock.find(u => u.email === email && u.password === password);
+        const usuarioValido = usuariosMock.find(u => u.email === email && u.password === password);
 
-    if (usuarioValido) {
-        // Guardar sesión
-        localStorage.setItem('session', JSON.stringify({ email: usuarioValido.email, role: usuarioValido.role }));
-        
-        // Redirección por rol
-        window.location.href = usuarioValido.role === 'admin' ? 'admin.html' : 'index.html';
-    } else {
-        // Mensaje genérico para no dar pistas
-        alert("Usuario o contraseña incorrectos.");
+        if (usuarioValido) {
+            // Guardar sesión
+            localStorage.setItem('session', JSON.stringify({ email: usuarioValido.email, role: usuarioValido.role }));
+            
+            // Redirección por rol
+            window.location.href = usuarioValido.role === 'admin' ? 'admin.html' : 'index.html';
+        } else {
+            // Mensaje genérico para no dar pistas
+            alert("Usuario o contraseña incorrectos.");
+        }
+    });
+}
+
+
+// ANIMACIÓN DE IMPACTO CHERNO ALPHA VS KAIJU
+document.addEventListener("DOMContentLoaded", function() {
+    const escenario = document.getElementById('escenario-pelea'); 
+    
+    // Protegemos el código para que solo se ejecute si el escenario existe, de lo contrario no mostrara la animacion :(
+    if (escenario) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Si la sección es visible en pantalla, añade la clase "animar"
+                if (entry.isIntersecting) {
+                    escenario.classList.add('animar');
+                } else {
+                    escenario.classList.remove('animar');
+                }
+            });
+        }, { threshold: 0.3 }); 
+
+        observer.observe(escenario);
     }
 }); */
 

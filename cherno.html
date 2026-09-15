@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cherno</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+
+<body>
+
+    <!-- El Header y Menu de Navegacion -->
+    <header class="barra-navegacion">
+        
+
+        <!-- El boton Hamburguesa -->
+        <button class="btn-hamburguesa" onclick="abrirMenu()">☰</button>
+        
+        <!-- Los enlaces del menu -->
+        <nav class="menu-enlaces" id="menu">
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+            
+        </nav>
+
+         <!-- Botones de Sesion-->
+
+            <!-- Zona Derecha: Botones y Carrito -->
+        <div class="nav-derecha">
+            <div class="botones-sesion">
+                <a href="login.html" class="btn-sesion">Iniciar Sesion</a>
+                <a href="registro.html" class="btn-registro">Registrarse</a>
+            </div>
+            
+            <!-- El nuevo carrito (usa el icono de emoji y llama a mi archivo JS) -->
+            <button class="btn-carrito" onclick="abrirCarrito()">🛒</button>
+        </div>
+        
+    </header>
+
+<!--para el video de cherno alpha-->
+    <main>
+        <section class="hero-video-container">
+            <!-- El video que actuará como fondo -->
+            <video autoplay loop muted playsinline class="video-fondo">
+                <source src="videos/Cherno1.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+            
+            <!-- Contenido de texto superpuesto al video (opcional) -->
+            <div class="hero-contenido">
+                <span class="etiqueta-novedad">PRÓXIMAMENTE</span>
+                <h1>Despliega a CHERNO ALPHA para defender la costa</h1>
+                <p>Echa un vistazo a nuestro proximo proyecto más imponente, con estructura reforzada. ¡El último de los Mark-1 está listo para la batalla!.</p>
+            </div>
+        </section>
+    </main>
+
+
+
+<!-- SECCIÓN DE INFORMACIÓN DEL NUEVO PROYECTO-->
+    <section class="seccion-info-robot">
+        <div class="contenedor-columnas">
+            
+            <div class="columna-imagen">
+                <img src="img/chernodescripcion.png" alt="Cherno Alpha Mark-1">
+            </div>
+            
+            <div class="columna-texto">
+                <h2>El pináculo de la ingeniería pesada</h2>
+                <p>Preparado para soportar los impactos más devastadores, <strong>Cherno Alpha</strong> es el modelo Mark-1 más robusto jamás diseñado por Brick Motors.</p>
+                <p>Muy pronto podrás ensamblar cada pistón, engranaje y el emblemático reactor nuclear de esta brutal bestia de combate. Diseñado exclusivamente para los constructores más experimentados.</p>
+                
+                <ul class="datos-tecnicos">
+                    <li><strong>🔧 Piezas estimadas:</strong> +5,000</li>
+                    <li><strong>⚙️ Dificultad:</strong> Maestro Constructor</li>
+                    <li><strong>📅 Lanzamiento:</strong> Invierno 2027</li>
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+
+
+<!--SECCIÓN DE ANIMACIÓN PARA EL IMPACTO-->
+    <section class="seccion-impacto">
+        <h2 class="titulo-impacto">¿Problemas con FullStack?</h2>
+
+        <div class="escenario-pelea" id="escenario-pelea">
+            <img src="img/kaiju.png" alt="Kaiju recibiendo golpe" class="luchador kaiju">
+            <img src="img/chernoboxeo.png" alt="Puñetazo de Cherno Alpha" class="luchador cherno-punch">
+        </div>
+            <h3 class="subtitulo-impacto">¡CHERNO ALPHA LOS ENFRENTA POR TI!</h3>
+    
+        
+        <!-- SECCIÓN VIDEO MAS MENSALE DEBAJO DEL IMPACTO :) -->
+<div class="contenedor-video-destruccion">
+
+    <div class="columna-video">
+        <video autoplay loop muted playsinline class="video-pelea">
+            <source src="videos/chernopelea.mp4" type="video/mp4">
+            El navegador no soporta videos HTML5.
+        </video>
+    </div>
+
+
+
+    <div class="columna-texto-llamativo">
+        <h2>¡APLASTA A LOS SETS DE LEGO DE TUS AMIGOS CON CHERNO ALPHA Y DEJA QUE ESOS 5 KILOS DE INGENIERÍA PURA DE LEGO TECHNIC LOS HAGA PEDAZOS!</h2>
+        <p>¿¿Qué esperas??</p>
+
+    </div>
+</div>
+    </section>
+
+
+
+
+<!-- PANEL LATERAL DEL CARRITO -->
+    <div id="carrito" class="panel-carrito">
+        <div class="carrito-header">
+            <h3>Tu Carrito</h3>
+            <button class="btn-cerrar-carrito" onclick="abrirCarrito()">Cerrar X</button>
+        </div>
+        
+        <div id="lista-carrito">
+        </div>
+        
+        <div class="carrito-totales">
+            <p>Total de Items: <span id="carrito-total-items">0</span></p>
+            <p>Total a pagar: $<span id="carrito-total-esmeraldas">0</span></p>
+        </div>
+    </div>
+
+
+
+
+
+<footer>
+        <p>&copy; 2026 Brick Motors. Todos los derechos reservados.</p>
+        <p>Contactame aqui: brickmotors@gmail.com</p>
+
+</footer>
+
+    <script src="js/inicio.js"></script>
+    
+</body>
+</html>
