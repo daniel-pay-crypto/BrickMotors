@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Brick Motors</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="vista-productos">
+
+    <header class="barra-navegacion">
+
+        <button class="btn-hamburguesa" onclick="abrirMenu()">☰</button>
+
+        <nav class="menu-enlaces" id="menu">
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="cherno.html">Cherno</a>
+        </nav>
+
+        <div class="nav-derecha">
+            <div class="botones-sesion">
+                <a href="login.html" class="btn-sesion">Iniciar Sesion</a>
+                <a href="registro.html" class="btn-registro">Registrarse</a>
+            </div>
+
+            <button class="btn-carrito" onclick="abrirCarrito()">🛒</button>
+        </div>
+
+    </header>
+
+<main>
+    <div class="fondo-oscuro">
+        <h1>Catálogo de Productos</h1>
+        <p>Descubre nuestra coleccion exclusiva de sets LEGO Star Wars.</p>
+    </div>
+
+    <div class="seccion-productos">
+        <div class="grid-productos">
+
+            <div class="tarjeta-producto">
+                <img src="img/at-st.png" alt="Caminante AT-ST">
+                <h3>Caminante AT-ST</h3>
+                <p class="precio">$150.000</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Caminante AT-ST', 'img/at-st.png', 1)">Agregar al Carrito</button>
+            </div>
+
+            <div class="tarjeta-producto">
+                <img src="img/stardestroyer.png" alt="Destructor Estelar">
+                <h3>Destructor Estelar</h3>
+                <p class="precio">$700.000</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Destructor Estelar', 'img/stardestroyer.png', 1)">Agregar al Carrito</button>
+            </div>
+
+            <div class="tarjeta-producto">
+                <img src="img/Fotoat1.jpeg" alt="AT-AT Supremacy">
+                <h3>AT-AT Supremacy</h3>
+                <p class="precio">$850.000</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('AT-AT Supremacy', 'img/Fotoat1.jpeg', 1)">Agregar al Carrito</button>
+            </div>
+
+            <div class="tarjeta-producto">
+                <img src="img/halconmilenario.png" alt="Halcon Milenario">
+                <h3>Halcón Milenario</h3>
+                <p class="precio">$800.000</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Halcon Milenario', 'img/halconmilenario.png', 1)">Agregar al Carrito</button>
+            </div>
+
+            <div class="tarjeta-producto">
+                <img src="https://www.tiendacopec.cl/cdn/shop/files/720196-1.jpg?v=1743191792" alt="LEGO Star Wars Pack De Combate: Emboscada En Mandalore">
+                <h3>LEGO® Star Wars Pack De Combate: Emboscada En Mandalore</h3>
+                <p class="precio">$29.690</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('LEGO® Star Wars Pack De Combate: Emboscada En Mandalore', 'https://www.tiendacopec.cl/cdn/shop/files/720196-1.jpg?v=1743191792', 1)">Agregar al Carrito</button>
+            </div>
+
+            <div class="tarjeta-producto">
+                <img src="https://www.tiendacopec.cl/cdn/shop/files/720198-1.jpg?v=1743191837&width=1200" alt="LEGO Star Wars Caza Estelar N-1 De Mando Y Grogu">
+                <h3>LEGO® Star Wars Caza Estelar N-1 De Mando Y Grogu</h3>
+                <p class="precio">$49.490</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('LEGO® Star Wars Caza Estelar N-1 De Mando Y Grogu', 'https://www.tiendacopec.cl/cdn/shop/files/720198-1.jpg?v=1743191837&width=1200', 1)">Agregar al Carrito</button>
+            </div>
+
+            <div class="tarjeta-producto">
+                <img src="https://www.tiendacopec.cl/cdn/shop/files/673419422390-1.jpg?v=1776276054&width=1200" alt="Lego Star Wars Hogar De Grogu">
+                <h3>Lego Star Wars Hogar De Grogu</h3>
+                <p class="precio">$31.670</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Lego Star Wars Hogar De Grogu', 'https://www.tiendacopec.cl/cdn/shop/files/673419422390-1.jpg?v=1776276054&width=1200', 1)">Agregar al Carrito</button>
+            </div>
+
+            <div class="tarjeta-producto">
+                <img src="https://www.tiendalego.cl/cdn/shop/products/75372_box_1000x1000.jpg?v=1773684544" alt="Pack de Combate: Soldado Clon y Droide de Combate">
+                <h3>Pack de Combate: Soldado Clon y Droide de Combate</h3>
+                <p class="precio">$49.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Pack de Combate: Soldado Clon y Droide de Combate', 'https://www.tiendalego.cl/cdn/shop/products/75372_box_1000x1000.jpg?v=1773684544', 1)">Agregar al Carrito</button>
+            </div>
+
+            <div class="tarjeta-producto">
+                <img src="https://www.tiendalego.cl/cdn/shop/files/75449_Box1_v39_851x851.jpg?v=1773686157" alt="Pack de Combate: Sitio de Mandalore">
+                <h3>Pack de Combate: Sitio de Mandalore</h3>
+                <p class="precio">$39.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Pack de Combate: Sitio de Mandalore', 'https://www.tiendalego.cl/cdn/shop/files/75449_Box1_v39_851x851.jpg?v=1773686157', 1)">Agregar al Carrito</button>
+            </div>
+
+            <div class="tarjeta-producto">
+                <img src="https://i5.walmartimages.cl/asr/b852af15-b7d4-490e-b1fe-fb24b2dc781d.f07979af1b6845db9b5a4205bcf003fa.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Set LEGO Star Wars Tm Caza TIE y Ala-X Fusionados">
+                <h3>Set LEGO Star Wars Tm Caza TIE y Ala-X Fusionados</h3>
+                <p class="precio">$239.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Set LEGO Star Wars Tm Caza TIE y Ala-X Fusionados', 'https://i5.walmartimages.cl/asr/b852af15-b7d4-490e-b1fe-fb24b2dc781d.f07979af1b6845db9b5a4205bcf003fa.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF', 1)">Agregar al Carrito</button>
+            </div>
+
+            <div class="tarjeta-producto">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_2X_789595-MLA114764147006_082026-F.webp" alt="Set De Construccion Lego 75412 Star Wars">
+                <h3>Set De Construcción Lego 75412 Star Wars</h3>
+                <p class="precio">$31.662</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Set De Construcción Lego 75412 Star Wars', 'https://http2.mlstatic.com/D_NQ_NP_2X_789595-MLA114764147006_082026-F.webp', 1)">Agregar al Carrito</button>
+            </div>
+
+            <div class="tarjeta-producto">
+                <img src="https://www.tiendalego.cl/cdn/shop/products/75345_box_851x851.jpg?v=1773072246" alt="Pack de Combate: Clon Troopers de la 501">
+                <h3>Pack de Combate: Clon Troopers de la 501</h3>
+                <p class="precio">$32.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Pack de Combate: Clon Troopers de la 501', 'https://www.tiendalego.cl/cdn/shop/products/75345_box_851x851.jpg?v=1773072246', 1)">Agregar al Carrito</button>
+            </div>
+
+            <div class="tarjeta-producto">
+                <img src="https://www.tiendalego.cl/cdn/shop/files/75458_Box1_v39_851x851.jpg?v=1782417013" alt="Casco de Piloto de AT-RT del Remanente Imperial">
+                <h3>Casco de Piloto de AT-RT del Remanente Imperial</h3>
+                <p class="precio">$109.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Casco de Piloto de AT-RT del Remanente Imperial', 'https://www.tiendalego.cl/cdn/shop/files/75458_Box1_v39_851x851.jpg?v=1782417013', 1)">Agregar al Carrito</button>
+            </div>
+
+            <div class="tarjeta-producto">
+                <img src="https://www.tiendalego.cl/cdn/shop/files/75439_Box1_v39_851x851.jpg?v=1776799113" alt="Busto de Darth Vader">
+                <h3>Busto de Darth Vader</h3>
+                <p class="precio">$89.990</p>
+                <button class="btn-agregar" onclick="agregarAlCarrito('Busto de Darth Vader', 'https://www.tiendalego.cl/cdn/shop/files/75439_Box1_v39_851x851.jpg?v=1776799113', 1)">Agregar al Carrito</button>
+            </div>
+
+        </div>
+    </div>
+</main>
+    <footer>
+        <p>&copy; 2026 Brick Motors. Todos los derechos reservados.</p>
+        <p>Contactame aqui: brickmotors@gmail.com</p>
+
+    </footer>
+    <script src="js/inicio.js"></script>
+
+    <div id="carrito" class="panel-carrito">
+        <div class="carrito-header">
+            <h3>Tu Carrito</h3>
+            <button class="btn-cerrar-carrito" onclick="abrirCarrito()">Cerrar X</button>
+        </div>
+
+        <div id="lista-carrito">
+        </div>
+
+        <div class="carrito-totales">
+            <p>Total de Items: <span id="carrito-total-items">0</span></p>
+            <p>Total a pagar: $<span id="carrito-total-esmeraldas">0</span></p>
+        </div>
+    </div>
+</body>
+</html>
